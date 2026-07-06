@@ -186,7 +186,7 @@
   }
   .menu-toggle span{width:24px;height:2px;background:var(--cream);display:block;}
 
- 
+  /* ---------- HERO ---------- */
   .hero{
     position:relative;
     padding:96px 0 80px;
@@ -207,7 +207,7 @@
   .flag-swatch i:nth-child(3){background:var(--chile-red);}
 
   h1.headline{
-    font-size:clamp(2.6rem, 7.4vw, 6.2rem);
+    font-size:clamp(2.4rem, 9vw, 6.2rem);
     line-height:0.98;
     color:var(--cream);
   }
@@ -255,7 +255,7 @@
   }
   .btn-ghost:hover, .btn-ghost:focus-visible{background:rgba(232,100,26,0.12);border-color:var(--orange);}
 
-  
+  /* ---------- SECTION GENERIC ---------- */
   section{position:relative;z-index:2;padding:90px 0;}
   .section-head{max-width:640px;margin-bottom:52px;}
   .section-head h2{font-size:clamp(2rem,4.2vw,3.2rem);color:var(--cream);margin-top:10px;}
@@ -267,7 +267,6 @@
     text-transform:none;
   }
 
-  
   .about-grid{
     display:grid;
     grid-template-columns:1.3fr 0.9fr;
@@ -332,7 +331,7 @@
     margin-top:4px;
   }
 
-  
+  /* ---------- TRAINING / SIGNATURE COUNTDOWN ---------- */
   .training-wrap{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -343,7 +342,7 @@
     background:var(--bg-card);
   }
   .training-info{
-    padding:48px;
+    padding:clamp(26px, 5vw, 48px);
     border-right:1px solid var(--line);
   }
   .training-info .row{
@@ -364,7 +363,7 @@
   }
   .training-info .row .v{
     font-family:'Anton',sans-serif;
-    font-size:1.5rem;
+    font-size:clamp(1.2rem, 4vw, 1.5rem);
     color:var(--cream);
     text-transform:uppercase;
     line-height:1.15;
@@ -389,7 +388,7 @@
   }
 
   .countdown-panel{
-    padding:48px;
+    padding:clamp(24px, 5vw, 48px);
     background:
       radial-gradient(circle at 50% 0%, rgba(232,100,26,0.14), transparent 60%),
       var(--bg-alt);
@@ -410,28 +409,50 @@
   .countdown-label.live{color:var(--orange-bright);}
   .countdown-digits{
     display:flex;
-    gap:14px;
+    justify-content:center;
+    align-items:flex-start;
+    gap:clamp(6px, 2vw, 14px);
+    width:100%;
+    max-width:360px;
   }
   .cd-block{
     display:flex;
     flex-direction:column;
     align-items:center;
     gap:6px;
+    flex:1 1 0;
+    min-width:0;
   }
   .cd-num{
     font-family:'JetBrains Mono',monospace;
     font-weight:700;
-    font-size:clamp(1.8rem, 4vw, 2.6rem);
+    font-size:clamp(1.2rem, 6vw, 2.6rem);
     color:var(--orange-bright);
     background:#17110b;
     border:1px solid var(--line-bright);
     border-radius:8px;
-    padding:10px 6px;
-    min-width:64px;
+    padding:clamp(6px, 2vw, 10px) 4px;
+    width:100%;
+    text-align:center;
     text-shadow:0 0 18px rgba(255,127,46,0.45);
+    font-variant-numeric:tabular-nums;
   }
-  .cd-sep{color:var(--muted-dim);font-family:'JetBrains Mono',monospace;font-size:1.6rem;align-self:flex-start;margin-top:8px;}
-  .cd-label{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--muted-dim);text-transform:uppercase;letter-spacing:0.06em;}
+  .cd-sep{
+    color:var(--muted-dim);
+    font-family:'JetBrains Mono',monospace;
+    font-size:clamp(0.9rem, 3vw, 1.6rem);
+    align-self:center;
+    padding-top:0;
+    flex:0 0 auto;
+  }
+  .cd-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:clamp(0.55rem, 1.8vw, 0.62rem);
+    color:var(--muted-dim);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    white-space:nowrap;
+  }
   .live-dot{
     width:9px;height:9px;border-radius:50%;background:var(--orange-bright);
     box-shadow:0 0 0 0 rgba(255,127,46,0.6);
@@ -445,7 +466,7 @@
   }
   .countdown-sub{font-size:0.9rem;color:var(--muted);max-width:32ch;}
 
-  
+  /* ---------- LOGROS timeline ---------- */
   .timeline{
     display:flex;
     flex-direction:column;
@@ -486,6 +507,7 @@
     border-radius:4px;
   }
 
+  /* ---------- GALLERY placeholders ---------- */
   .gallery-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -506,6 +528,12 @@
     overflow:hidden;
     transition:border-color 0.2s, transform 0.2s;
   }
+  .g-tile img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:10px;
+  }
   .g-tile:hover{border-color:var(--line-bright);transform:translateY(-3px);}
   .g-tile .emoji{font-size:1.8rem;}
   .g-tile span{
@@ -524,7 +552,7 @@
     pointer-events:none;
   }
 
-
+  /* ---------- JOIN / FOOTER ---------- */
   .join{
     text-align:center;
     padding:100px 0;
@@ -553,7 +581,7 @@
     font-family:'JetBrains Mono',monospace;
   }
 
-
+  /* ---------- responsive ---------- */
   @media (max-width:860px){
     .about-grid{grid-template-columns:1fr;}
     .training-wrap{grid-template-columns:1fr;}
@@ -562,6 +590,9 @@
     .tl-item{grid-template-columns:1fr;gap:8px;}
   }
   @media (max-width:720px){
+    section{padding:64px 0;}
+    .hero{padding:64px 0 56px;}
+    .section-head{margin-bottom:36px;}
     .nav-links{
       position:fixed;
       top:78px;left:0;right:0;
@@ -577,12 +608,21 @@
     .nav-links a{padding:16px 32px;width:100%;border-bottom:1px solid var(--line);opacity:1;}
     .menu-toggle{display:flex;}
     .ig-btn span.txt{display:none;}
-    .cd-num{min-width:50px;font-size:1.4rem;padding:8px 4px;}
-    .cd-block{gap:4px;}
+    .training-info .row{gap:12px;margin-bottom:20px;}
+    .training-info .row .k{width:52px;font-size:0.6rem;}
   }
-  @media (max-width:520px){
-    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  @media (max-width:480px){
     .wrap{padding:0 20px;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
+    .countdown-digits{gap:5px;max-width:100%;}
+    .cd-sep{padding:0 1px;}
+    .badge-cats span{font-size:0.65rem;padding:5px 9px;}
+  }
+  @media (max-width:360px){
+    .countdown-digits{gap:3px;}
+    .cd-num{font-size:1.05rem;padding:6px 2px;}
+    .cd-sep{display:none;}
+    .cd-label{font-size:0.5rem;}
   }
 
   :focus-visible{outline:2px solid var(--orange-bright);outline-offset:3px;}
@@ -599,7 +639,7 @@
   <nav>
     <div class="brand">
       <!-- Placeholder de logo: reemplaza este div por <img src="tu-logo.png" alt="Team Garra del Norte"> -->
-      <div class="logo-placeholder"><br>LOGO</div>
+      <div class="logo-placeholder">TU<br>LOGO</div>
       <div class="brand-name">
         TEAM GARRA<br>DEL NORTE
         <span>Lucha de brazos · Arica</span>
@@ -626,6 +666,7 @@
 
 <main>
 
+  <!-- ================= HERO ================= -->
   <section class="hero" id="inicio">
     <div class="wrap">
       <div class="hero-flagline">
@@ -647,6 +688,7 @@
     </div>
   </section>
 
+  <!-- ================= NOSOTROS ================= -->
   <section id="nosotros">
     <div class="wrap about-grid">
       <div class="about-text">
@@ -668,11 +710,13 @@
       </div>
     </div>
   </section>
+
+  <!-- ================= ENTRENAMIENTOS ================= -->
   <section id="entrenamientos">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Dónde y cuándo</span>
-        <h2>Entrena con nosotros</em></h2>
+        <h2>Entrena con nosotros</h2>
       </div>
 
       <div class="training-wrap">
@@ -707,11 +751,13 @@
       </div>
     </div>
   </section>
+
+  <!-- ================= LOGROS ================= -->
   <section id="logros">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Trayectoria</span>
-        <h2>Logros y competencias</em></h2>
+        <h2>Logros y competencias</h2>
       </div>
       <div class="timeline">
         <div class="tl-item">
@@ -721,7 +767,6 @@
             <p>Norte de Chile vs. Sur del Perú. Organizada por Team Garra del Norte, con pesaje e inicio de torneo en una sola jornada de puro brazo y orgullo fronterizo.</p>
             <span class="tl-tag">Norte de Chile 🇨🇱 vs Sur del Perú 🇵🇪</span>
           </div>
-        </div>
         </div>
         <div class="tl-item">
           <span class="tl-date">2026</span>
